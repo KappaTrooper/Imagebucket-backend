@@ -6,6 +6,18 @@ const uploadPhotoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    takenBy: {
+      type: String, // Update the data type according to your requirements
+      required: true,
+    },
   },
   { timestamps: true }
 );
