@@ -1,14 +1,26 @@
-const {Router} = require('express'); // import Router object from express
-const uploadMiddleware = require('../middlewares/MulterMiddleware');
+const { Router } = require("express");
+const uploadMiddleware = require("../middlewares/MulterMiddleware");
+const UploadModel = require("../models/UploadModel");
 
+const router = Router();
 
-const router = Router(); // create a router object
-
-
-router.post('/api/save', uploadMiddleware.single("photo"),  (req, res) => { // handle post requests to /api/save
-    const photo = req.file.filename; // get file name from multer middleware
-    
-    console.log(photo);
+router.get("/api/get", async (req, res) => {
+  const allPhotos = await UploadModel.find().sort({ createdAt: "descending" });
+  res.send(allPhotos);
 });
 
-module.exports = router; // export the router object
+router.post("/api/save", uploadMiddleware.single("photo"), (req, res) => {
+  const photo = req.file.filename;
+
+  console.log(photo);
+
+  UploadModel.create({ photo })
+    .then((data) => {
+      console.log("Uploaded Successfully...");
+      console.log(data);
+      res.send(data);
+    })
+    .catch((err) => console.log(err));
+});
+
+module.exports = router;

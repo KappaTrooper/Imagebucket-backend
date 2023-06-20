@@ -29,4 +29,6 @@ app.use(Upload);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
+  console.log(process.env.MONGO_URL)
+  console.log(process.env.PORT)
 });
