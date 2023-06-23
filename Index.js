@@ -15,7 +15,7 @@ app.use(express.static('public')); // serve static files
 // use async await to connect to MongoDB instead of callback
 async function connectToMongoDB() {
   try {
-    await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+    await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     console.log('Connected to MongoDB... ;)');
   } catch (error) {
     console.error('Failed to connect to MongoDB:', error);
