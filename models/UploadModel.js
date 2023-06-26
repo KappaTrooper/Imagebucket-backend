@@ -18,9 +18,20 @@ const uploadPhotoSchema = new mongoose.Schema(
       type: String, // Update the data type according to your requirements
       required: true,
     },
+    userID: {
+      type: String, // Update the data type according to your requirements
+      required: true,
+    },
+    likes: {
+      type: Number,
+      default: 0,
+    },
+    impressions: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true }
 );
-
 
 module.exports = mongoose.model("UploadPhoto", uploadPhotoSchema);
