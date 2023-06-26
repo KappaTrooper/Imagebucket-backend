@@ -1,3 +1,5 @@
-MONGO_URL=""
 
-// remove the ""
+
+
+//MONGO_URL=mongodb+srv://Ajay:56555655@cluster0.fpnbndg.mongodb.net/image-upload?retryWrites=true&w=majority
+//JWT_SECRET=i-have-no-enemies
