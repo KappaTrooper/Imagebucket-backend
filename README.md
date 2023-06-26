@@ -57,7 +57,7 @@ The development of Imagebucket doesn't stop here. Exciting future enhancements a
 
 **Client:** React, SASS, 
 
-**Server:** Node, Express, MongoDB, CORS, JWT
+**Server:** Node, Express, MongoDB, CORS, JWT, Multer
 
 
 ## Starting the project
